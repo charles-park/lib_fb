@@ -67,7 +67,7 @@ static void print_usage(const char *prog)
          "                 2 HANGODIC\n"
          "                 3 HANPIL\n"
          "                 4 HANSOFT\n"
-         "  Useage : ./lib_fb -s 3 -F 2\n"
+         "  Useage : ./lib_fb -s 2 -F 2\n"
     );
     exit(1);
 }
@@ -78,7 +78,6 @@ static void parse_opts(int argc, char *argv[])
     while (1) {
         static const struct option lopts[] = {
             { "fb_device",  1, 0, 'D' },
-            { "ts_device",  1, 0, 'T' },
             { "rotate",  	1, 0, 'R' },
             { "red",		1, 0, 'r' },
             { "green",		1, 0, 'g' },
@@ -95,12 +94,11 @@ static void parse_opts(int argc, char *argv[])
             { "clear",		0, 0, 'C' },
             { "info",		0, 0, 'i' },
             { "font",		1, 0, 'F' },
-            { "ui_cfg",		1, 0, 'I' },
             { NULL, 0, 0, 0 },
         };
         int c;
 
-        c = getopt_long(argc, argv, "D:T:R:r:g:b:x:y:w:h:fn:t:s:c:CiF:I:", lopts, NULL);
+        c = getopt_long(argc, argv, "D:R:r:g:b:x:y:w:h:fn:t:s:c:CiF:", lopts, NULL);
 
         if (c == -1)
             break;
