@@ -1,11 +1,12 @@
-# lib_fbui
-JIG에 사용하는 Framebuffer control library (UI화면 설정).
+# lib_ui (2025.06.12, lib_fbui로 부터 fb부분만 분리)
+Framebuffer only version (1bpp 추가, lib_fbui의 1bpp추가 시점으로 분리. 일반 Framebuffer에 사용하기 위함).
 
 ```
-root@server:~/lib_fbui# ./lib_fbui -h
+root@server:~/lib_fb# ./lib_fb -h
 
-Usage: ./lib_fbui [-DrgbxywhfntscCi]
+Usage: ./lib_fb [-DrgbxywhfntscCi]
   -D --device    device to use (default /dev/fb0)
+  -R --rotate    fb rotate display (0, 90, 180, 270. default = 0)
   -r --red       pixel red hex value.(default = 0)
   -g --green     pixel green hex value.(default = 0)
   -b --blue      pixel blue hex value.(default = 0)
@@ -26,6 +27,5 @@ Usage: ./lib_fbui [-DrgbxywhfntscCi]
                  2 HANGODIC
                  3 HANPIL
                  4 HANSOFT
-
-  Useage : ./lib_fbui -I fbui.cfg -s 3 -F 2
+  Useage : ./lib_fb -s 2 -F 2
 ```
